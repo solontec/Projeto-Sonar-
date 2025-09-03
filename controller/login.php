@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['tipo_conta'] = $usuario['tipo_conta'];
 
             // Redireciona dependendo do tipo
-            if ($usuario['tipo_conta'] === "Empresa") {
+            if ($usuario['tipo_conta'] === "empresa") {
                 header("Location: ../views/empresa/telaEmpresaInicial.php");
             } else {
                 header("Location: ../views/usuario/telaUsuarioInicial.php");
