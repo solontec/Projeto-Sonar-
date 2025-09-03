@@ -1,6 +1,7 @@
 <?php 
 require_once "../model/connClass.php";
 
+
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 $nome = $_POST['nome'] ?? null;
