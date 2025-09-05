@@ -35,7 +35,7 @@ $stmt->bind_param("ssi", $token, $expira, $user['id']);
 $stmt->execute();
 
 // Link para redefinir  a senha do user, o token vale por 1 hr dps nao pode acessar mais
-$link = "http://localhost:8090/views/telaRedefinir.php?token=$token";
+$link = "http://localhost/sonar/Projeto-Sonar-/views/telaRedefinir.php?token=$token";
 
 // Envia e-mail
 $mail = new PHPMailer(true);
