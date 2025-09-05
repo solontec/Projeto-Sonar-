@@ -24,4 +24,3 @@ if($stmt->execute()){
     header("Location: ../views/telaLogin.php");
 }
 }
- echo "Cadastrado!";
