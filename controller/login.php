@@ -1,6 +1,6 @@
 <?php
 
-require_once "../model/connClass.php"; // puxa o arquivo novamente
+require_once "../model/conexao.php"; // puxa o arquivo novamente
 session_start(); // inicia uma sessao para o controle de acesso
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

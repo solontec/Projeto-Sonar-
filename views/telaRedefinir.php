@@ -1,5 +1,5 @@
 <?php
-require_once "../model/connClass.php";
+require_once "../model/conexao.php";
 
 $token = $_GET['token'] ?? null;
 
