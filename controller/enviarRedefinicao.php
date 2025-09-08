@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once '../vendor/autoload.php';
-require_once "../model/connClass.php";
+require_once "../model/conexao.php";
 
 // auto load das classes nunca esquecer
 

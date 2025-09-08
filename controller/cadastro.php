@@ -1,5 +1,5 @@
 <?php 
-require_once "../model/connClass.php";
+require_once "../model/conexao.php";
 
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
