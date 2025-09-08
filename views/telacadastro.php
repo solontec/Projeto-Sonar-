@@ -44,8 +44,8 @@
                 <label for="tipo">Tipo de conta</label>
                 <select name="tipo" required>
                     <option value="" disabled selected>Selecione o Tipo</option>
-                    <option value="candidato">Candidato a Emprego</option>
-                    <option value="empresa">Empresa</option>
+                    <option value="Cliente">Candidato a Emprego</option>
+                    <option value="Empresa">Empresa</option>
                 </select>
 
                 <button type="submit">Cadastrar</button>
