@@ -1,54 +1,30 @@
 <?php
-    include ('conexao.php');
+include('conexao.php');
 
-        //verifica se id foi enviado
-if (isset($_GET ['id'])) {
+// Verifica se o id foi enviado
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
-        //pega o id da url
-$id = $_GET['id'];
+    // Prepara a consulta SQL para excluir o registro
+    $sql = "DELETE FROM usuarios WHERE id = ?";
 
-        //prepara a consulta sql para excluir o registro
- $sql = "DELETE FROM usuarios WHERE id = ?";
+    if ($stmt = $conn->prepare($sql)) {
+        // Vincula o valor do parâmetro
+        $stmt->bind_param('i', $id);
 
+        // Executa a consulta
+        if ($stmt->execute()) {
+            echo "Registro excluído com sucesso!";
+            header("Location: login.php"); // redireciona para a página de login
+            exit();
+        } else {
+            echo "Erro ao excluir o registro.";
+        }
 
-        //preparar a consulta
-
- if ($stmt = $conn->prepare($sql)){
-
-        //vincula o valor do parametro
-
- $stmt->bind_param('i', $id); // "i" é pq o parametro é inteiro
-
-        //executar a consulta 
- if($stmt->execute());
-
-        //se a exclusao for sucedida
-    echo "Registro excluído com sucesso!";
-    header("Location: login.php"); //redireciona para a pagina de login
-    exit();
-
-  }  else {
-
-    //se tiver um erro na exclusão
-
-  echo "Erro ao excluir o registro";
-
-    //fechar a declaração
-
- $stmt->close();
-
+        $stmt->close();
+    } else {
+        echo "Erro na preparação da consulta.";
+    }
 } else {
-
-    //se o id nao for fornecido
-    echo "ID não fornecido";
-
-    $stmt->close();
-
-} 
+    echo "ID não fornecido.";
 }
-    ;
-
-
-
-
-
