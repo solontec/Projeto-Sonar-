@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f9fcff;
+  color: #2c3e50;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #007c91;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #e6f7f9;
+  color: #007c91;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-primary {
+  background: #2e9fb8;
+  color: #fff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #24839a;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #2e9fb8;
+  color: #2e9fb8;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  background: #e6f7f9;
+}
+
+.btn-secondary {
+  background: #a6dbe7;
+  color: #004d57;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #92c8d4;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 80px;
+  background: linear-gradient(to right, #eaf9fc, #f9fcff);
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  color: #007c91;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Features */
+.features {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.features h2 {
+  font-size: 28px;
+  color: #007c91;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature-card img {
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #007c91;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.4;
+}
