@@ -65,5 +65,7 @@ FOREIGN KEY (id_requisito) REFERENCES requisitos(id)
 
 );
 
+ALTER TABLE vagas
+ADD COLUMN topico ENUM('Administração', 'Tecnologia', 'Engenharia', 'Enfermagem') NOT NULL;
 
 
