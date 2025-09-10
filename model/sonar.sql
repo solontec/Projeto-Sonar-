@@ -1,6 +1,7 @@
 USE sonar;
 select * from usuarios;
 
+select * from vagas;
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
@@ -33,6 +34,7 @@ descricao_requisito VARCHAR(255)
 );
 
 
+
 CREATE TABLE IF NOT EXISTS vagas(
 
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,13 +43,15 @@ descricao_vaga VARCHAR(255) NOT NULL,
 experiencia_vaga VARCHAR(100),
 diferencial_vaga VARCHAR(255),
 
+
+
 -- aplicando as chaves estrangeiras nessa tabela  -- 
 
 id_empresa INT,
 id_area INT,
 
-FOREIGN KEY (id_empresa) REFERENCES empresas(id),
-FOREIGN KEY (id_areas) REFERENCES areas_vagas(id)
+FOREIGN KEY (id_empresa) REFERENCES empresa	(id),
+FOREIGN KEY (id_area) REFERENCES areas_vagas(id)
 );
 
 CREATE TABLE IF NOT EXISTS vagas_requisitos(

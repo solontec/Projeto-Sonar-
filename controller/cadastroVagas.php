@@ -8,8 +8,9 @@ $titulo_vaga = $_POST['titulo_vaga'] ?? null;
 $descricao_vaga = $_POST['descricao_vaga'] ?? null;
 $experiencia_vaga = $_POST['experiencia_vaga'] ?? null;
 $diferencial_vaga = $_POST['diferencial_vaga'] ?? null;
+$setor = $_POST['setor'] ?? null;
 
-$cadastrarVaga = "INSERT  INTO vagas(titulo_vaga, descricao_vaga, experiencia_vaga, diferencial_vaga) VALUES (?, ? ,? , ?)";
+$cadastrarVaga = "INSERT  INTO vagas(titulo_vaga, descricao_vaga, experiencia_vaga, diferencial_vaga, topico) VALUES (?, ? ,? , ?, ?)";
 
 $stmt = $conn->prepare($cadastrarVaga);
 
@@ -17,7 +18,7 @@ if(!$stmt){
     die("erro no prepare");
 }
 
-$stmt->bind_param("ssss", $titulo_vaga, $descricao_vaga, $especificacao_vaga, $diferencial_vaga);
+$stmt->bind_param("sssss", $titulo_vaga, $descricao_vaga, $experiencia_vaga, $diferencial_vaga, $setor);
 
 if($stmt->execute()){
     echo "cadastrou a vaga com sucesso";
