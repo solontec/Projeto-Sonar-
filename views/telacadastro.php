@@ -24,10 +24,10 @@
         </nav>
     </header>
 
-    <!-- Fundo do formulário -->
+    
     <div class="form-fundo">
 
-        <!-- Card do Cadastro -->
+        
         <div class="form-cadastro">
             <h2>Cadastrar no Sonar</h2>
 
