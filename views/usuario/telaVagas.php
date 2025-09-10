@@ -1,7 +1,14 @@
 <?php
 
 
+require_once "../../model/conexao.php";
+// Consulta todas as vagas
+$sql = "SELECT * FROM vagas";
+$result = $conn->query($sql);
+
+
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -34,7 +41,26 @@
     <p>Vagas especialmente voltadas para a comunidade surda e deficientes auditivos</p>
 
     <div class="jobs-container">
-      <p class="no-jobs">Nenhuma vaga disponível no momento.</p>
+      <p class="no-jobs">
+
+    <?php
+      if ($result->num_rows > 0) {
+    foreach ($result as $vaga) {
+        echo "<p>";
+        echo "Título: " . $vaga['titulo_vaga'] . "<br>";
+        echo "Descrição: " . $vaga['descricao_vaga'] . "<br>";
+        echo "Experiência: " . $vaga['experiencia_vaga'] . "<br>";
+        echo "Diferencial: " . $vaga['diferencial_vaga'] . "<br>";
+        echo "Setor: " . $vaga['topico'] . "<br>";
+        echo "</p><hr>";
+    }
+    } else {
+    echo "Nenhuma vaga encontrada.";
+} 
+    ?>
+
+      </p>
+      
     </div>
   </section>
 

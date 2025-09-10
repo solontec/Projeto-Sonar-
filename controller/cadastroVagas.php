@@ -10,7 +10,7 @@ $experiencia_vaga = $_POST['experiencia_vaga'] ?? null;
 $diferencial_vaga = $_POST['diferencial_vaga'] ?? null;
 $setor = $_POST['setor'] ?? null;
 
-$cadastrarVaga = "INSERT  INTO vagas(titulo_vaga, descricao_vaga, experiencia_vaga, diferencial_vaga, topico) VALUES (?, ? ,? , ?, ?)";
+$cadastrarVaga = "INSERT INTO vagas(titulo_vaga, descricao_vaga, experiencia_vaga, diferencial_vaga, topico) VALUES (?, ? ,? , ?, ?)";
 
 $stmt = $conn->prepare($cadastrarVaga);
 
@@ -26,6 +26,7 @@ if($stmt->execute()){
 } else{
     echo "erro no cadastro";
 }
+
     
 }
 ?>
