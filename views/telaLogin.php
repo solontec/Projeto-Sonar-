@@ -18,10 +18,10 @@
     <h1>Sonar</h1>
     <nav>
         <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Cursos</a></li>
-            <li><a href="#">Vagas</a></li>
-            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="../views/usuario/telaInicial.php">Início</a></li>
+            <li><a href="../views/usuario/telaCursos.php">Cursos</a></li>
+            <li><a href="../views/usuario/telaVagas.php">Vagas</a></li>
+            <li><a href="../views/telaSobre.php">Sobre Nós</a></li>
             <li><button class="btn-entrar">Entrar</button></li>
             <li><button class="btn-cadastrar">Cadastrar</button></li>
         </ul>
