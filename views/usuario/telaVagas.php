@@ -10,15 +10,15 @@ $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vagas | Sonar</title>
+  <title>Vagas Sonar</title>
   <link rel="stylesheet" href="../static/telaVagas.css">
 </head>
 <body>
-  <!-- Navbar -->
+  
   <header class="navbar">
     <div class="logo">Sonar</div>
     <nav>
@@ -35,7 +35,7 @@ $result = $conn->query($sql);
     </div>
   </header>
 
-  <!-- Vagas Section -->
+  
   <section class="jobs">
     <h2>Oportunidades de Trabalho</h2>
     <p>Vagas especialmente voltadas para a comunidade surda e deficientes auditivos</p>
@@ -52,7 +52,7 @@ $result = $conn->query($sql);
         echo "Experiência: " . $vaga['experiencia_vaga'] . "<br>";
         echo "Diferencial: " . $vaga['diferencial_vaga'] . "<br>";
         echo "Setor: " . $vaga['topico'] . "<br>";
-        echo "</p><hr>";
+        
     }
     } else {
     echo "Nenhuma vaga encontrada.";
