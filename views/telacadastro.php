@@ -51,37 +51,37 @@
 
 <!-- Formulário da Empresa -->
 
-<form id="formEmpresa" action="../controller/cadastro.php" method="post" style="display:none;">
+<form id="formEmpresa" action="../controller/cadastro.php" method="post" style="display:none;" >
   <label for="nome_empresa">Nome da Empresa</label>
   <input type="text" name="nome_empresa" id="nome_empresa" required>
 
   <label for="cnpj_empresa">CNPJ</label>
-  <input type="text" name="cnpj_empresa" id="cnpj" placeholder="00.000.000/0001-00" required>
+  <input type="text" name="cnpj_empresa" id="cnpj" placeholder="00.000.000/0001-00" required maxlength="14">
 
   <label for="razao_empresa">Razão Social</label>
   <input type="text" name="razao_empresa" id="razao_empresa" required>
 
   <label for="descricao_empresa">Descrição da empresa</label>
-  <input type="text" name="descricao_empresa" id="descricao_empresa" required> 
+  <input type="text" name="descricao_empresa" id="descricao_empresa" required > 
 
   <label for="area_empresa">Area de atuação</label>
-  <input type="text" name="area_empresa" id="descricao_empresa" required> 
+  <input type="text" name="area_empresa" id="descricao_empresa" required maxlength="150"> 
 
   <label for="endereco">Endereço</label>
-  <input type="text" name="endereco_empresa" id="endereco" placeholder="Rua Exemplo, 123" required>
+  <input type="text" name="endereco_empresa" id="endereco" placeholder="Rua Exemplo, 123" required maxlength="60">
 
 
   <label for="telefone">Telefone</label>
-  <input type="text" name="telefone_empresa" id="telefone" placeholder="(11) 99999-9999" required>
+  <input type="text" name="telefone_empresa" id="telefone" placeholder="(11) 99999-9999" required maxlength="11">
 
   <label for="email_empresa">E-mail</label>
-  <input type="email" name="email_empresa" id="email_empresa" required>
+  <input type="email" name="email_empresa" id="email_empresa" required maxlength="40">
 
   <label for="senha_empresa">Senha</label>
-  <input type="password" name="senha_empresa" id="email_empresa" required>
+  <input type="password" name="senha_empresa" id="email_empresa" required maxlength="16">
 
   <label for="site">Site</label>
-  <input type="url" name="site_empresa" id="site" placeholder="https://www.suaempresa.com">
+  <input type="url" name="site_empresa" id="site" placeholder="https://www.suaempresa.com" maxlength="200">
 
   <label for="tipo_empresa">Tipo de conta</label>
   <select name="tipo" id="tipo_empresa" required onchange="alternarFormulario()">

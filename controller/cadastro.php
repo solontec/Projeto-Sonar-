@@ -25,10 +25,6 @@ if($stmt->execute()){
     header("Location: ../views/telaLogin.php");
 }
 
-
-
-
-
 // cadastro de empresas
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
