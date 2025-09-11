@@ -1,7 +1,5 @@
 USE sonar;
-select * from usuarios;
 
-select * from vagas;
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
@@ -18,7 +16,7 @@ CREATE TABLE IF NOT EXISTS empresa(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome_empresa VARCHAR(50) NOT NULL,
 descricao_empresa VARCHAR(255) NOT NULL,
-cnpj_empresa VARCHAR(70) NOT NULL
+cnpj_empresa VARCHAR(70) NOT NULL  
 ); 
 
 CREATE TABLE IF NOT EXISTS areas_vagas(
@@ -42,6 +40,7 @@ titulo_vaga VARCHAR(80) NOT NULL,
 descricao_vaga VARCHAR(255) NOT NULL,
 experiencia_vaga VARCHAR(100),
 diferencial_vaga VARCHAR(255),
+
 
 
 
