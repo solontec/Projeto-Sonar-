@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "12345";
 $db = "sonar";
 
 $conn = new mysqli($host, $user, $pass, $db);
