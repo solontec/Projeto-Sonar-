@@ -1,39 +1,36 @@
 <?php
-
-require_once "../model/conexao.php"; // puxa o arquivo novamente
-session_start(); // inicia uma sessao para o controle de acesso
+require_once "../model/conexao.php";
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'] ?? null;
     $senha = $_POST['senha'] ?? null;
 
     if (empty($email) || empty($senha)) {
-        echo "preencha todos os campos";
+        echo "Preencha todos os campos!";
+        exit;
     }
 
-    // aqui ele verifica primeiro se existe o email no banco corretamente
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
+    
+    $sqlUsuario = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sqlUsuario);
 
     if (!$stmt) {
-        die("Erro no prepare: " . $conn->error);
+        die("Erro no prepare (usuarios): " . $conn->error);
     }
 
     $stmt->bind_param("s", $email);
-    $stmt->execute();   
-    $resultado = $stmt->get_result();
+    $stmt->execute();
+    $resultadoUsuario = $stmt->get_result();
 
-    if ($resultado->num_rows === 1) {
-        $usuario = $resultado->fetch_assoc();
+    if ($resultadoUsuario->num_rows === 1) {
+        $usuario = $resultadoUsuario->fetch_assoc();
 
-        // Verifica a senha com o hash da senha para ver se bate certinho 
         if (password_verify($senha, $usuario['senha'])) {
-            
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
             $_SESSION['tipo_conta'] = $usuario['tipo_conta'];
 
-            // Redireciona dependendo do tipo
             if ($usuario['tipo_conta'] === "Empresa") {
                 header("Location: ../views/empresa/telaEmpresaInicial.php");
             } else {
@@ -42,8 +39,38 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         } else {
             echo "Senha incorreta!";
+            exit;
         }
-    } else {
-        echo "Usuário não encontrado!";
     }
+
+    
+    $sqlEmpresa = "SELECT * FROM empresa WHERE email_empresa = ?";
+    $stmt = $conn->prepare($sqlEmpresa);
+
+    if (!$stmt) {
+        die("Erro no prepare (empresa): " . $conn->error);
+    }
+
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultadoEmpresa = $stmt->get_result();
+
+    if ($resultadoEmpresa->num_rows === 1) {
+        $empresa = $resultadoEmpresa->fetch_assoc();
+
+        if (password_verify($senha, $empresa['senha_empresa'])) {
+            $_SESSION['id'] = $empresa['id_empresa']; // use a PK real da tabela
+            $_SESSION['nome_empresa'] = $empresa['nome_empresa'];
+            $_SESSION['tipo_conta'] = "Empresa";
+
+            header("Location: ../views/empresa/telaEmpresaInicial.php");
+            exit;
+        } else {
+            echo "Senha incorreta!";
+            exit;
+        }
+    }
+
+    // Se não encontrou em nenhuma das duas tabelas
+    echo "Usuário ou empresa não encontrado!";
 }
