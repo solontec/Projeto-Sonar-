@@ -5,7 +5,6 @@ USE sonar;
 
 -- Remove as tabelas na ordem correta (filhas primeiro)
 
-
 -- Criação da tabela empresa
 CREATE TABLE IF NOT EXISTS empresa (
     id INT AUTO_INCREMENT PRIMARY KEY,

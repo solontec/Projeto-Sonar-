@@ -49,7 +49,7 @@
   <button type="submit">Cadastrar</button>
 </form>
 
-<!-- Formulário da Empresa -->
+
 
 <form id="formEmpresa" action="../controller/cadastro.php" method="post" style="display:none;" >
   <label for="nome_empresa">Nome da Empresa</label>
@@ -93,7 +93,7 @@
 </form>
 
 
-      <p>Já tem conta? <a href="../views/telaLogin.php">Entre aqui</a></p>
+    <p>Já tem conta? <a href="../views/index.php">Entre aqui</a></p>
     </div>
   </div>
 
@@ -104,7 +104,7 @@
     const selectCliente = document.getElementById("tipo_cliente");
     const selectEmpresa = document.getElementById("tipo_empresa");
 
-    // Se o usuário está no formulário de Cliente
+    
     if (formCliente.style.display !== "none") {
       if (selectCliente.value === "Empresa") {
         formCliente.style.display = "none";
